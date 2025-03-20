@@ -35,7 +35,7 @@ export default defineConfig({
 			// editLink: {
 			// 	baseUrl: 'https://github.com/withastro/docs/edit/main',
 			// },
-			defaultLocale: 'en',
+			// defaultLocale: 'en',
 			// locales: makeLocalesConfig(),
 			// sidebar,
 			// social: {
@@ -54,7 +54,7 @@ export default defineConfig({
 			// 		},
 			// 	},
 			// ],
-			// disable404Route: true,
+			disable404Route: true,
 			// plugins: [starlightPluginAutolinkHeadings()],
 		}),
 		// sitemap(),
