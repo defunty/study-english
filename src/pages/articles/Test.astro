@@ -1,0 +1,37 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Article from '~/components/Article.astro';
+import { getCollection } from 'astro:content';
+
+// 記事コレクションからすべての記事を取得
+const articles = await getCollection('articles');
+
+// 日付の新しい順に並べ替え
+const sortedArticles = articles.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+---
+
+<Layout>
+  <div class="articles-container">
+    <h1>記事一覧</h1>
+
+    {sortedArticles.map(article => (
+      <Article article={article} />
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .articles-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 2rem;
+  }
+</style>

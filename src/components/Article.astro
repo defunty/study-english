@@ -3,7 +3,7 @@
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  article: CollectionEntry<'articles'>;
+  article: CollectionEntry<'articles'> | undefined;
 }
 
 const { article } = Astro.props;
@@ -43,4 +43,3 @@ const { Content } = await article.render();
     line-height: 1.6;
     color: #444;
   }
-</style>
