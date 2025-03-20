@@ -6,7 +6,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "check": "astro check",
+    "format": "yarn run format:code",
+    "format:ci": "yarn run format:imports && yarn run format:code",
+    "format:code": "prettier -w . --cache --plugin-search-dir=.",
+    "format:imports": "echo 'Skipped formatting imports'",
+    "lint:linkcheck": "SKIP_OG=true yarn build && tsm --require=./scripts/lib/filter-warnings.cjs ./scripts/lint-linkcheck.ts",
+    "lint:linkcheck:nobuild": "tsm --require=./scripts/lib/filter-warnings.cjs ./scripts/lint-linkcheck.ts",
+    "lint:slugcheck": "node ./scripts/lint-slugcheck.mjs",
+    "lint:eslint": "eslint ."
   },
   "dependencies": {
     "@eslint/js": "^9.22.0",
