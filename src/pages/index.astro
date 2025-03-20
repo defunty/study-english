@@ -8,4 +8,34 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<Welcome />
+	<div class="articles-link">
+		<a href="/articles">記事一覧を見る</a>
+	</div>
 </Layout>
+
+<style>
+	.articles-link {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		z-index: 100;
+	}
+
+	.articles-link a {
+		display: inline-block;
+		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+		color: white;
+		padding: 10px 16px;
+		border-radius: 8px;
+		text-decoration: none;
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		font-weight: 500;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.articles-link a:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+</style>
